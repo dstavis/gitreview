@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root "pages#home"
+  get "commits", to: "pages#commits"
   
   resources :users, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]

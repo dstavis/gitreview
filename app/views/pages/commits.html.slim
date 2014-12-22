@@ -1,0 +1,13 @@
+.container
+
+  .col-md-9
+    - @commits.each do |commit|
+      .col-md-2
+        a href=""
+          = commit.commit.tree.sha.truncate(14)
+      .col-md-3
+        = commit.commit.message
+      .col-md-3
+        = commit.commit.author.name
+      br
+      br
