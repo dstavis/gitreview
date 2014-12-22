@@ -6,9 +6,13 @@ class UsersController < ApplicationController
   def create
     user = User.find_or_initialize_by(username: user_params[:username])
     user.update_attributes(user_params)
-    if user.save
-      session[:user_id] = user.id
-      redirect_to :controller => :commits, :action => :index
+    if github_authenticated?(user)
+      if user.save
+        session[:user_id] = user.id
+        redirect_to :controller => :commits, :action => :index
+      else
+        redirect_to action: :new
+      end
     else
       redirect_to action: :new
     end

@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
 
   def destroy
     success = @client.delete("https://api.github.com/repos/dstavis/gitreview/comments/#{params[:id]}")
-    binding.pry
     redirect_to commit_path(id: params[:commit_id])
   end
 end
