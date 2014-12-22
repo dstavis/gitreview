@@ -9,9 +9,9 @@ Octokit.configure do |c|
   c.password = "makeschool1"
 end
 
-CLIENT = Octokit::Client.new
+# CLIENT = Octokit::Client.new
 
-client.get("https://api.github.com/repos/dstavis/gitreview/commits")
+# client.get("https://api.github.com/repos/dstavis/gitreview/commits")
 
 # client.get(Octokit.user.repos_url).select{|repo| repo.name = 'gitreview'}.first.id
 
@@ -23,3 +23,9 @@ client.get("https://api.github.com/repos/dstavis/gitreview/commits")
 
 
 # client.get("https://api.github.com/repos/dstavis/gitreview/commits")
+
+# qcommit.sha
+#  => "a1a88beb0dd8946407f3d50d6424caeac6389456" 
+# 2.0.0-p481 :071 > sha = _
+#  => "a1a88beb0dd8946407f3d50d6424caeac6389456" 
+# 2.0.0-p481 :072 > client.get("https://api.github.com/repos/dstavis/quacker/commits/#{sha}")
