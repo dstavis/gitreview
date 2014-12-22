@@ -18,12 +18,15 @@
     - if @comments.present?
       h1 Comments
       - @comments.each do |comment|
-
         .row
+          .col-md-1
           .col-md-3
             = comment.user.login
+          .col-md-2
+            = button_to "Delete", commit_comment_path(commit_id: params[:id], id: comment.id), :method => :delete, class: "btn btn-danger"
         .row
-          .col-md-12
+          .col-md-2
+          .col-md-10
             p= comment.body
     
     = link_to "Make a New Comment", new_commit_comment_path(commit_id: params[:id]), class: "btn btn-default"
