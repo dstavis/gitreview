@@ -5,9 +5,8 @@
     - @files.each do |file|
       .row
         .col-md-3
-          = file.filename
+          = link_to file.filename, file.
         .col-md-6
-          = file.path
         .col-md-3
           = file.sha.truncate(14)
       .row

@@ -12,7 +12,6 @@ class CommitsController < ApplicationController
   def show
     sha = params[:id]
     commit = @client.get("https://api.github.com/repos/dstavis/gitreview/commits/#{sha}")
-
     @files = commit.files
     
     # (if any of the comments have author.username == current_user.username, they have a delete option)
