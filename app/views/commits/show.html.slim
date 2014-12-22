@@ -17,13 +17,13 @@
     
     - if @comments.present?
       h1 Comments
-    - @comments.each do |comment|
+      - @comments.each do |comment|
 
-      .row
-        .col-md-3
-          = comment.user.login
-      .row
-        .col-md-12
-          p= comment.body
-
-
+        .row
+          .col-md-3
+            = comment.user.login
+        .row
+          .col-md-12
+            p= comment.body
+    
+    = link_to "Make a New Comment", new_commit_comment_path(commit_id: params[:id]), class: "btn btn-default"
