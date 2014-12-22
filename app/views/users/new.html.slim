@@ -1,11 +1,17 @@
 h1 Please create an account
 
-= form_for(@user, url: new_user_path(@user), html: {id: 'user_sign_up'}) do |f|
+= form_for @user do |f|
   
-  = f.label Username
-  = f.input
+  = f.label :username
+  = f.text_field :username
 
-  = f.label Password
-  = f.input
+  = f.label :password
+  = f.text_field :password
 
-  = f.input type="submit" value="submit" name="submit"
+  = f.label :github_username
+  = f.text_field :github_username
+
+  = f.label :github_password
+  = f.text_field :github_password
+
+  = f.submit

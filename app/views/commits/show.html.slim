@@ -1,0 +1,24 @@
+.container
+
+  .col-md-9
+    - @files.each do |file|
+      .row
+        .col-md-3
+          = file.filename
+        .col-md-6
+          = file.path
+        .col-md-3
+          = link_to file_path, params.merge({:sha => file.sha})
+            = file.sha.truncate(14)
+      .row
+        .col-md-12
+          p= file.patch
+    - @comments.each do |comment|
+      .row
+        .col-md-3
+          = comment.author.name
+      .row
+        .col-md-12
+          p= comment.text
+
+

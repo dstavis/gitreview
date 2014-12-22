@@ -2,13 +2,16 @@
   .col-md-9
     h1 Welcome to Gitreview!
     
-    .col-md-3
-      .signup
-        p Are you new here?
-        a href=new_user_path class="btn btn-default"
-          | Sign up
-    .col-md-3
-      .signin
-        p Already have an account?
-        a href=new_session_path class="btn btn-default"
-          | Sign in
+    - unless logged_in?
+      .col-md-3
+        .signup
+          p Are you new here?
+          a href=new_user_path class="btn btn-default"
+            | Sign up
+      .col-md-3
+        .signin
+          p Already have an account?
+          a href=new_session_path class="btn btn-default"
+            | Sign in
+    - else
+      
