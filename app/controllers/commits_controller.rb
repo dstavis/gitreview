@@ -9,7 +9,7 @@ class CommitsController < ApplicationController
 
   # This is a single commit
   def show
-    sha = params[:sha]
+    sha = params[:id]
     # 27531a4402b654076356a2cf2453d318ba511a3b has a comment
     # client.get("https://api.github.com/repos/dstavis/gitreview/commits/27531a4402b654076356a2cf2453d318ba511a3b")
     commit = @client.get("https://api.github.com/repos/dstavis/gitreview/commits/#{sha}")
